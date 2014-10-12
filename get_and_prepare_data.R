@@ -1,7 +1,7 @@
 # Downloads household_power_consumption and saves the data between start_date and
 # end_date (inclusive) to household_power_consumption_subset.csv
 get_and_prepare_data <- function(start_date=as.Date('2007-02-01'),
-                                 end_date=as.Date('2007-02-02'))
+                                 end_date=as.Date('2007-02-02')) {
 
     data_download_link <- paste(
         'https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2F',
@@ -21,3 +21,4 @@ get_and_prepare_data <- function(start_date=as.Date('2007-02-01'),
     selected_data <- data[data$Date >= start_date & data$Date <= end_date, ]
     write.csv(selected_data, selected_data_file, quote = FALSE,
               row.names = FALSE)
+}
