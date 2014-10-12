@@ -21,4 +21,5 @@ get_and_prepare_data <- function(start_date=as.Date('2007-02-01'),
     selected_data <- data[data$Date >= start_date & data$Date <= end_date, ]
     write.csv(selected_data, selected_data_file, quote = FALSE,
               row.names = FALSE)
+    setwd('..')
 }
